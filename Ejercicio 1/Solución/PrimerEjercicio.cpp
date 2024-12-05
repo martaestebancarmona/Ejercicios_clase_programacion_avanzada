@@ -4,6 +4,8 @@
 #include "A.h"
 
 int main() {
+
+    // Crear una instancia de ListadeAs con su constructor predeterminado
     ListadeAs listaDeAs;
 
     // Crear algunos objetos A
@@ -27,12 +29,13 @@ int main() {
     std::cout << "Despues de eliminar el ultimo objeto:\n";
     listaDeAs.mostrarTodos();
 
-    // Mostrar un objeto específico
+    // Mostrar un objeto con el índice 0
     std::cout << "Mostrar el primer objeto:\n";
     listaDeAs.mostrarA(0);
 
     return 0;
 }
+
 //---- OTRA MANERA DE HACERLO ----
 // Clase A
 //class A {
