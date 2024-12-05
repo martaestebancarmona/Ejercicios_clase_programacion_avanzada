@@ -3,14 +3,17 @@ using namespace std;
 
 // Clase base
 class Vehiculo {
-public: // Permite acceso en herencia protegida
-    string marca;
-    string modelo;
-private:
-    int ano;
 
-public:
-    Vehiculo(string m, string mod, int a) : marca(m), modelo(mod), ano(a) {}
+    public: // Permite acceso en herencia protegida
+        string marca;
+        string modelo;
+
+    private:
+        int ano;
+
+
+    public:
+        Vehiculo(string m, string mod, int a) : marca(m), modelo(mod), ano(a) {}
 
     void mostrarInformacion() {
         cout << "Marca: " << marca << ", Modelo: " << modelo << ", Año: " << ano << endl;
@@ -19,11 +22,12 @@ public:
 
 // Herencia pública
 class Furgoneta : public Vehiculo {
-private:
-    int numeroPuertas;
 
-public:
-    Furgoneta(string m, string mod, int a, int puertas) : Vehiculo(m, mod, a), numeroPuertas(puertas) {}
+    private:
+        int numeroPuertas;
+
+    public:
+        Furgoneta(string m, string mod, int a, int puertas) : Vehiculo(m, mod, a), numeroPuertas(puertas) {}
 
     void tocarBocina() {
         cout << "¡Bip bip!" << endl;
@@ -32,11 +36,12 @@ public:
 
 // Herencia privada
 class Motocicleta : private Vehiculo {
-private:
-    string tipoManillar;
 
-public:
-    Motocicleta(string m, string mod, int a, string manillar) : Vehiculo(m, mod, a), tipoManillar(manillar) {}
+    private:
+        string tipoManillar;
+
+    public:
+        Motocicleta(string m, string mod, int a, string manillar) : Vehiculo(m, mod, a), tipoManillar(manillar) {}
 
     void mostrarInformacion() { // Sobreescritura
         cout << "Tipo de manillar: " << tipoManillar << endl;
@@ -45,11 +50,12 @@ public:
 
 // Herencia protegida
 class Camion : protected Vehiculo {
-private:
-    int capacidadCarga;
 
-public:
-    Camion(string m, string mod, int a, int carga) : Vehiculo(m, mod, a), capacidadCarga(carga) {}
+    private:
+        int capacidadCarga;
+
+    public:
+        Camion(string m, string mod, int a, int carga) : Vehiculo(m, mod, a), capacidadCarga(carga) {}
         
     void mostrarCapacidad() {
         cout << "Capacidad de carga: " << capacidadCarga << " kg" << endl;
@@ -61,10 +67,9 @@ public:
 
 // Herencia múltiple
 class Furgomoto : public Furgoneta, public Motocicleta {
-public:
-    Furgomoto(string m, string mod, int a, int
-        puertas, string manillar) : Furgoneta(m, mod, a, puertas), Motocicleta(m, mod, a, manillar) {}
-
+    public:
+        Furgomoto(string m, string mod, int a, int
+            puertas, string manillar) : Furgoneta(m, mod, a, puertas), Motocicleta(m, mod, a, manillar) {}
 };
 
 // Ejemplo de uso
