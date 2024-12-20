@@ -5,7 +5,6 @@
 
 class A
 {
-
 	private:
 		int id; // identificador
 		std::string nombre; // nombre

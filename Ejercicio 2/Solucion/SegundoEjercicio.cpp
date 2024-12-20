@@ -11,7 +11,6 @@ class Vehiculo {
     private:
         int ano;
 
-
     public:
         Vehiculo(string m, string mod, int a) : marca(m), modelo(mod), ano(a) {}
 
@@ -83,6 +82,7 @@ int main() {
 
     Camion miCamion("Volvo", "FMX", 2019, 18000);
     miCamion.mostrarCapacidad();
+
     Furgomoto miFurgomoto("Toyota", "Corolla", 2020, 4, "Deportivo");
     miFurgomoto.Furgoneta::mostrarInformacion();
 
